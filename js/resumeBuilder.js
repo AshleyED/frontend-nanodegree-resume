@@ -10,16 +10,14 @@ var funThoughts = awesomeThoughts.replace ("AWESOME!", "FUN!");
 
 $("#main").append(funThoughts); */
 
-//var name = "Ashley Davison";
-//var role = "Front-End Developer";
+var name = "Ashley Davison";
+var role = "Front-End Developer";
 
-//var formattedName = HTMLheaderName.replace ("%data%" , name);
-//$("#header").append(formattedName);
-//console.log(formattedName);
+var formattedName = HTMLheaderName.replace ("%data%" , name);
+$("#header").append(formattedName);
 
-//var formattedRole = HTMLheaderRole.replace ("%data%", role);
-//$("#header").append(formattedRole);
-//console.log(formattedRole);
+var formattedRole = HTMLheaderRole.replace ("%data%", role);
+$("#header").append(formattedRole);
 
 var bio = {
   "name" : "Ashley",
@@ -32,7 +30,19 @@ var bio = {
     "github" : "AshleyED",
     "location" : "Schenectady NY"
   },
-  "skills" : "everything"
+  "skills" : ["everything" , "doge" , "tree" , "axe"]
+}
+
+if (bio.skills.length > 0) {
+  $("#header").append(HTMLskillsStart);
+  var formattedSkill = HTMLskills.replace("%data%" , bio.skills[0]);
+  $("#skills").append(formattedSkill);
+  formattedSkill = HTMLskills.replace("%data%" , bio.skills[1]);
+  $("#skills").append(formattedSkill);
+  formattedSkill = HTMLskills.replace("%data%" , bio.skills[2]);
+  $("#skills").append(formattedSkill);
+  formattedSkill = HTMLskills.replace("%data%" , bio.skills[3]);
+  $("#skills").append(formattedSkill);
 }
 
 $("#main").prepend(bio.name);
@@ -127,7 +137,7 @@ $("#main").append(online.urlC);
 
 var work = {};
 work.position = "Human Resources Manager";
-work.employer = "The Alternative Living Group Inc";
+//work.employer = "The Alternative Living Group Inc";
 work.dates = "2014-Current";
 work.location = "Albany, NY";
 work.description = "Acted as HR Manager and generalist in non-profit agency";
@@ -144,51 +154,56 @@ work.datesB = "2007-2009";
 work.locationB = "Latham, NY";
 work.descriptionB = "Acted as AFter-School Instructor in non-profit agency";
 
-$("#main").append(work.position);
-$("#main").append(work.employer);
-$("#main").append(work.dates);
-$("#main").append(work.location);
-$("#main").append(work.description);
+//var formattedWork.employer = HTMLworkEmployer.replace ("%data%" , work.employer);
 
-$("#main").append(work.positionA);
-$("#main").append(work.employerA);
-$("#main").append(work.datesA);
-$("#main").append(work.locationA);
-$("#main").append(work.descriptionA);
+$("#workExperience").append(work.position);
+//$("#workExperience").append(formattedWork.employer);
+$("#workExperience").append(work.dates);
+$("#workExperience").append(work.location);
+$("#workExperience").append(work.description);
 
-$("#main").append(work.positionB);
-$("#main").append(work.employerB);
-$("#main").append(work.datesB);
-$("#main").append(work.locationB);
-$("#main").append(work.descriptionB);
+$("#workExperience").append(work.positionA);
+$("#workExperience").append(work.employerA);
+$("#workExperience").append(work.datesA);
+$("#workExperience").append(work.locationA);
+$("#workExperience").append(work.descriptionA);
 
-var projects = {};
-projects.title = "Project One";
-projects.dates = "2015";
-projects.description = "This is Project One";
-projects.images = "This will be an image";
+$("#workExperience").append(work.positionB);
+$("#workExperience").append(work.employerB);
+$("#workExperience").append(work.datesB);
+$("#workExperience").append(work.locationB);
+$("#workExperience").append(work.descriptionB);
 
-projects.titleA = "Project Two";
-projects.datesA = "2015";
-projects.descriptionA = "This is Project Two";
-projects.imagesA = "This will be an image";
+var project = {};
+project.title = "Project One";
+project.dates = "2015";
+project.description = "This is Project One";
+project.images = "This will be an image";
 
-projects.titleB = "Project Three";
-projects.datesB = "2015";
-projects.descriptionB = "This is Project Three";
-projects.imagesB = "This will be an image";
+project.titleA = "Project Two";
+project.datesA = "2015";
+project.descriptionA = "This is Project Two";
+project.imagesA = "This will be an image";
 
-$("#main").append(projects.title);
-$("#main").append(projects.dates);
-$("#main").append(projects.description);
-$("#main").append(projects.images);
+project.titleB = "Project Three";
+project.datesB = "2015";
+project.descriptionB = "This is Project Three";
+project.imagesB = "This will be an image";
 
-$("#main").append(projects.titleA);
-$("#main").append(projects.datesA);
-$("#main").append(projects.descriptionA);
-$("#main").append(projects.imagesA);
+//var formattedProject = HTMLheaderName.replace ("%data%" , name);
+//$("#header").append(formattedName);
 
-$("#main").append(projects.titleB);
-$("#main").append(projects.datesB);
-$("#main").append(projects.descriptionB);
-$("#main").append(projects.imagesB);
+$("#projects").append(project.title);
+$("#projects").append(project.dates);
+$("#projects").append(project.description);
+$("#projects").append(project.images);
+
+$("#projects").append(project.titleA);
+$("#projects").append(project.datesA);
+$("#projects").append(project.descriptionA);
+$("#projects").append(project.imagesA);
+
+$("#projects").append(project.titleB);
+$("#projects").append(project.datesB);
+$("#projects").append(project.descriptionB);
+$("#projects").append(project.imagesB);
