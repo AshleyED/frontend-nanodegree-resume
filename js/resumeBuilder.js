@@ -45,7 +45,7 @@ if (bio.skills.length > 0) {
   $("#skills").append(formattedSkill);
 }
 
-$("#main").prepend(bio.name);
+/*$("#main").prepend(bio.name);
 $("#main").append(bio.role);
 $("#main").append(bio.picture);
 $("#main").append(bio.welcome);
@@ -53,29 +53,61 @@ $("#main").append(bio.contacts.mobile);
 $("#main").append(bio.contacts.email);
 $("#main").append(bio.contacts.github);
 $("#main").append(bio.contacts.location);
-$("#main").append(bio.skills);
+$("#main").append(bio.skills);*/
 
-var school = {};
-  school.name = "Empire State College";
-  school.location = "Online";
-  school.dates = "2007-2009";
-  school.degree = "BS";
-  school.major = "Business, Management & Economics";
-  school.minor = "Concentration in Management Studies";
-  school.url = "http://www.esc.edu/";
+var education = {
+  "schools" : [
+    {
+      "name": "Empire State College",
+      "city": "Online",
+      "degree": "BS",
+      "majors": "Business, Management & Economics",
+      "dates": "2007-2009",
+      "url": "http://www.esc.edu/"
+    },
+    {
+      "name": "University at Albany",
+      "city": "Albany NY",
+      "dates":"2005-2007",
+      "url": "http://www.albany.edu/"
+    },
+    {
+      "name": "Scotia-Glenville High School",
+      "city": "Scotia NY",
+      "degree": "Advanced Regents Diploma",
+      "dates": "9/2001-1/2005",
+      "url": "http://www.scotiaglenvilleschools.org/SrHS/SrHS_home.cfm"
+    }
+  ],
+  "onlineCourses" : [
+    {
+      "title": "Intro to HTML and CSS",
+      "school": "Udacity",
+      "dates": "2015",
+      "url": "https://www.udacity.com/course/viewer#!/c-ud304-nd/l-3342528615/m-3343838767"
+    },
+    {
+      "title": "Responsive Web Design Fundamentals",
+      "school": "Udacity",
+      "dates": "2015",
+      "url": "https://www.udacity.com/course/viewer#!/c-ud893-nd/l-3581758575/m-3575058641"
+    },
+    {
+      "title": "Responsive Images",
+      "school": "Udacity",
+      "dates": "2015",
+      "url": "https://www.udacity.com/course/viewer#!/c-ud882-nd/l-3574748851"
+    },
+    {
+      "title": "JavaScript Basics",
+      "school": "Udacity",
+      "dates": "2015",
+      "url": "https://www.udacity.com/course/viewer#!/c-ud804"
+    }
+  ]
+}
 
-  school.nameA = "University at Albany";
-  school.locationA = "Albany NY";
-  school.datesA = "2005-2007";
-  school.urlA = "http://www.albany.edu/";
-
-  school.nameB = "Scotia-Glenville High School";
-  school.locationB = "Scotia NY";
-  school.datesB = "9/2001-1/2005";
-  school.degreeB = "Advanced Regents Diploma";
-  school.urlB = "http://www.scotiaglenvilleschools.org/SrHS/SrHS_home.cfm";
-
-  $("#main").append(school.name);
+  /*$("#main").append(school.name);
   $("#main").append(school.location);
   $("#main").append(school.dates);
   $("#main").append(school.degree);
@@ -92,30 +124,9 @@ var school = {};
   $("#main").append(school.locationB);
   $("#main").append(school.datesB);
   $("#main").append(school.degreeB);
-  $("#main").append(school.urlB);
+  $("#main").append(school.urlB);*/
 
-var online = {};
-  online.title = "Intro to HTML and CSS";
-  online.school = "Udacity";
-  online.dates = "2015";
-  online.url = "https://www.udacity.com/course/viewer#!/c-ud304-nd/l-3342528615/m-3343838767";
-
-  online.titleA = "Responsive Web Design Fundamentals";
-  online.schoolA = "Udacity";
-  online.datesA = "2015";
-  online.urlA = "https://www.udacity.com/course/viewer#!/c-ud893-nd/l-3581758575/m-3575058641";
-
-  online.titleB = "Responsive Images";
-  online.schoolB = "Udacity";
-  online.datesB = "2015";
-  online.urlB = "https://www.udacity.com/course/viewer#!/c-ud882-nd/l-3574748851";
-
-  online.titleC = "JavaScript Basics";
-  online.schoolC = "Udacity";
-  online.datesC = "2015";
-  online.urlC = "https://www.udacity.com/course/viewer#!/c-ud804";
-
-$("#main").append(online.title);
+/*$("#main").append(online.title);
 $("#main").append(online.school);
 $("#main").append(online.dates);
 $("#main").append(online.url);
@@ -133,67 +144,78 @@ $("#main").append(online.urlB);
 $("#main").append(online.titleC);
 $("#main").append(online.schoolC);
 $("#main").append(online.datesC);
-$("#main").append(online.urlC);
+$("#main").append(online.urlC);*/
 
-var work = {};
-work.position = "Human Resources Manager";
-//work.employer = "The Alternative Living Group Inc";
-work.dates = "2014-Current";
-work.location = "Albany, NY";
-work.description = "Acted as HR Manager and generalist in non-profit agency";
+var work = {
+  "jobs" : [
+    {
+      "employer": "The Alternative Living Group Inc",
+      "title": "Human Resources Manager",
+      "dates": "2014-Current",
+      "location": "Albany NY",
+      "description": "Acted as HR Manager and generalist in non-profit agency"
+    },
+    {
+      "employer": "The Alternative Living Group Inc",
+      "title": "Family Services Coordinator",
+      "dates": "2009-2013",
+      "location": "Albany NY",
+      "description": "Acted as FSC in non-profit agency"
+    },
+    {
+      "employer": "Wildwood Programs Inc",
+      "title": "After-School Instructor",
+      "dates": "2007-2009",
+      "location": "Latham NY",
+      "description": "Acted as After-School Instructor in non-profit agency"
+    }
+  ]
+}
 
-work.positionA = "Family Services Coordinator";
-work.employerA = "The Alternative Living Group Inc";
-work.datesA = "2009-2013";
-work.locationA = "Albany, NY";
-work.descriptionA = "Acted as FSC in non-profit agency";
+for (job in work.jobs) {
+  $("#workExperience").append(HTMLworkStart);
+  var formattedEmployer = HTMLworkEmployer.replace("%data%" , work.jobs[job].employer);
+  var formattedTitle = HTMLworkTitle.replace("%data%" , work.jobs[job].title);
+  var formattedEmployerTitle = formattedEmployer + formattedTitle;
+  $(".work-entry:last").append(formattedEmployerTitle);
+  var formattedDates = HTMLworkDates.replace("%data%" , work.jobs[job].dates);
+  $(".work-entry:last").append(formattedDates);
+  var formattedDescription = HTMLworkDescription.replace("%data%" , work.jobs[job].description);
+  $(".work-entry:last").append(formattedDescription);
+}
 
-work.positionB = "After-School Instructor";
-work.employerB = "Wildwood Programs Inc";
-work.datesB = "2007-2009";
-work.locationB = "Latham, NY";
-work.descriptionB = "Acted as AFter-School Instructor in non-profit agency";
+/*if (work.jobs.location.length > 0) {
+  $("#workExperience").append(HTMLworkLocation);
+  var formattedLocation = HTMLworkLocation.replace("%data%" , jobs.location);
+  $("#workExperience").append(formattedSkill);
+}*/
 
-//var formattedWork.employer = HTMLworkEmployer.replace ("%data%" , work.employer);
 
-$("#workExperience").append(work.position);
-//$("#workExperience").append(formattedWork.employer);
-$("#workExperience").append(work.dates);
-$("#workExperience").append(work.location);
-$("#workExperience").append(work.description);
+var projects = {
+  "projects": [
+    {
+      "title": "Project One",
+      "dates": "2015",
+      "description": "This is Project One",
+      "images": "This will be an image"
+    },
+    {
+      "title": "Project Two",
+      "dates": "2015",
+      "description": "This is Project Two",
+      "images": "This will be an image"
+    },
+    {
+      "title": "Project Three",
+      "dates": "2015",
+      "description": "This is Project Three",
+      "images": "This will be an image"
+    }
+  ]
+}
 
-$("#workExperience").append(work.positionA);
-$("#workExperience").append(work.employerA);
-$("#workExperience").append(work.datesA);
-$("#workExperience").append(work.locationA);
-$("#workExperience").append(work.descriptionA);
 
-$("#workExperience").append(work.positionB);
-$("#workExperience").append(work.employerB);
-$("#workExperience").append(work.datesB);
-$("#workExperience").append(work.locationB);
-$("#workExperience").append(work.descriptionB);
-
-var project = {};
-project.title = "Project One";
-project.dates = "2015";
-project.description = "This is Project One";
-project.images = "This will be an image";
-
-project.titleA = "Project Two";
-project.datesA = "2015";
-project.descriptionA = "This is Project Two";
-project.imagesA = "This will be an image";
-
-project.titleB = "Project Three";
-project.datesB = "2015";
-project.descriptionB = "This is Project Three";
-project.imagesB = "This will be an image";
-
-//var formattedProject = HTMLheaderName.replace ("%data%" , name);
-//$("#header").append(formattedName);
-
-$("#projects").append(project.title);
+/*$("#projects").append(project.title);
 $("#projects").append(project.dates);
 $("#projects").append(project.description);
 $("#projects").append(project.images);
@@ -206,4 +228,4 @@ $("#projects").append(project.imagesA);
 $("#projects").append(project.titleB);
 $("#projects").append(project.datesB);
 $("#projects").append(project.descriptionB);
-$("#projects").append(project.imagesB);
+$("#projects").append(project.imagesB); */
