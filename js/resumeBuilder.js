@@ -30,7 +30,7 @@ var bio = {
     "github" : "AshleyED",
     "location" : "Schenectady NY"
   },
-  "skills" : ["everything" , "doge" , "tree" , "axe"]
+  "skills" : ["Front" , "End" , "Web" , "Developer"]
 }
 
 if (bio.skills.length > 0) {
@@ -172,17 +172,32 @@ var work = {
   ]
 }
 
-for (job in work.jobs) {
-  $("#workExperience").append(HTMLworkStart);
-  var formattedEmployer = HTMLworkEmployer.replace("%data%" , work.jobs[job].employer);
-  var formattedTitle = HTMLworkTitle.replace("%data%" , work.jobs[job].title);
-  var formattedEmployerTitle = formattedEmployer + formattedTitle;
-  $(".work-entry:last").append(formattedEmployerTitle);
-  var formattedDates = HTMLworkDates.replace("%data%" , work.jobs[job].dates);
-  $(".work-entry:last").append(formattedDates);
-  var formattedDescription = HTMLworkDescription.replace("%data%" , work.jobs[job].description);
-  $(".work-entry:last").append(formattedDescription);
+function displayWork () {
+  for (job in work.jobs) {
+    $("#workExperience").append(HTMLworkStart);
+    var formattedEmployer = HTMLworkEmployer.replace("%data%" , work.jobs[job].employer);
+    var formattedTitle = HTMLworkTitle.replace("%data%" , work.jobs[job].title);
+    var formattedEmployerTitle = formattedEmployer + formattedTitle;
+    $(".work-entry:last").append(formattedEmployerTitle);
+    var formattedDates = HTMLworkDates.replace("%data%" , work.jobs[job].dates);
+    $(".work-entry:last").append(formattedDates);
+    var formattedDescription = HTMLworkDescription.replace("%data%" , work.jobs[job].description);
+    $(".work-entry:last").append(formattedDescription);
+  }
 }
+
+displayWork ();
+
+/* $("#main").append(internationalizeButton);
+
+function inName (name) {
+  name = name.trim().split(" ");
+  console.log(name);
+  names[1] = names[1].toUpperCase();
+  names[0] = names [0].slice(0,1).toUpperCase()+names[0].slice(1).toLowerCase();
+
+  return name[0] + " " + name[1];
+} */
 
 /*if (work.jobs.location.length > 0) {
   $("#workExperience").append(HTMLworkLocation);
@@ -197,35 +212,49 @@ var projects = {
       "title": "Project One",
       "dates": "2015",
       "description": "This is Project One",
-      "images": "This will be an image"
+      "images": "http://placehold.it/50x50"
     },
     {
       "title": "Project Two",
       "dates": "2015",
       "description": "This is Project Two",
-      "images": "This will be an image"
+      "images": "http://placehold.it/50x50"
     },
     {
       "title": "Project Three",
       "dates": "2015",
       "description": "This is Project Three",
-      "images": "This will be an image"
+      "images": "http://placehold.it/50x50"
     }
   ]
 }
 
+function displayProjects () {
+  for (project in projects.projects) {
+    $("#projects").append(HTMLprojectStart);
+
+    var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
+    $(".project-entry:last").append(formattedTitle);
+
+    var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
+    $(".project-entry:last").append(formattedDates);
+
+    var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
+    $(".project-entry:last").append(formattedDescription);
+
+    if (projects.projects[project].images.length > 0) {
+      for (image in projects.projects[project].images) {
+        var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
+        $(".project-entry:last").append(formattedImage);
+      }
+    }
+  }
+}
+
+displayProjects ();
 
 /*$("#projects").append(project.title);
 $("#projects").append(project.dates);
 $("#projects").append(project.description);
 $("#projects").append(project.images);
-
-$("#projects").append(project.titleA);
-$("#projects").append(project.datesA);
-$("#projects").append(project.descriptionA);
-$("#projects").append(project.imagesA);
-
-$("#projects").append(project.titleB);
-$("#projects").append(project.datesB);
-$("#projects").append(project.descriptionB);
-$("#projects").append(project.imagesB); */
+ */
