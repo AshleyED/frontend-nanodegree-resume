@@ -253,8 +253,4 @@ function displayProjects () {
 
 displayProjects ();
 
-/*$("#projects").append(project.title);
-$("#projects").append(project.dates);
-$("#projects").append(project.description);
-$("#projects").append(project.images);
- */
+$("#mapDiv").append(googleMap);
