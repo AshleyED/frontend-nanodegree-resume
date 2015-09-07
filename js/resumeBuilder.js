@@ -21,16 +21,21 @@ var bio = {
   "skills" : ["HTML" , "CSS" , "JavaScript" , "jQuery"]
 }
 
+//TODO fix alignment of bio info
+
 var formattedbioPicture = HTMLbioPic.replace("%data%" , bio.picture);
 $("#topContacts").append(formattedbioPicture);
 var formattedbioWelcome = HTMLwelcomeMsg.replace("%data%" , bio.welcome);
 $("#topContacts").append(formattedbioWelcome);
 var formattedbioMobile = HTMLmobile.replace("%data%" , bio.contacts.mobile);
 $("#topContacts").append(formattedbioMobile);
+$("#footerContacts").append(formattedbioMobile);
 var formattedbioEmail = HTMLemail.replace("%data%" , bio.contacts.email);
 $("#topContacts").append(formattedbioEmail);
+$("#footerContacts").append(formattedbioEmail);
 var formattedbioGithub = HTMLgithub.replace("%data%" , bio.contacts.github);
 $("#topContacts").append(formattedbioGithub);
+$("#footerContacts").append(formattedbioGithub);
 var formattedbioLocation = HTMLlocation.replace("%data%" , bio.contacts.location);
 $("#topContacts").append(formattedbioLocation);
 
@@ -123,7 +128,7 @@ displayEducation();
 
 function displayOnlineEducation () {
   for (onlineCourse in education.onlineCourses) {
-// TODO figure out the below line
+// TODO fix online classes header
 //    $("#education").prepend(HTMLonlineClasses);
 //    $("#education").append(HTMLschoolStart);
     var formattedOnlineTitle = HTMLonlineTitle.replace("%data%" , education.onlineCourses[onlineCourse].title);
@@ -134,10 +139,9 @@ function displayOnlineEducation () {
     $(".education-entry:last").append(formattedOnlineDates);
     var formattedOnlineUrl = HTMLonlineURL.replace("%data%" , education.onlineCourses[onlineCourse].url);
     $(".education-entry:last").append(formattedOnlineUrl);
-    //var formattedUrl = HTMLschoolMajor.replace("%data%" , education.schools[school].major);
-    //$(".education-entry:last").append(formattedMajors);
   }
 }
+
 $("#education").append(HTMLonlineClasses);
 displayOnlineEducation();
 
@@ -185,7 +189,8 @@ function displayWork () {
 
 displayWork ();
 
-/* $("#main").append(internationalizeButton);
+/* Removed- do not wish to include at this time
+$("#main").append(internationalizeButton);
 
 function inName (name) {
   name = name.trim().split(" ");
@@ -200,7 +205,8 @@ function inName (name) {
   $("#workExperience").append(HTMLworkLocation);
   var formattedLocation = HTMLworkLocation.replace("%data%" , jobs.location);
   $("#workExperience").append(formattedSkill);
-}*/
+}
+*/
 
 
 var projects = {
@@ -209,19 +215,19 @@ var projects = {
       "title": "Project One",
       "dates": "2015",
       "description": "This is Project One",
-      "images": ["http://placehold.it/50x50"]
+      "images": ["http://placehold.it/150x150", "http://placehold.it/150x150", "http://placehold.it/150x150"]
     },
     {
       "title": "Project Two",
       "dates": "2015",
       "description": "This is Project Two",
-      "images": ["http://placehold.it/50x50"]
+      "images": ["http://placehold.it/150x150", "http://placehold.it/150x150", "http://placehold.it/150x150"]
     },
     {
       "title": "Project Three",
       "dates": "2015",
       "description": "This is Project Three",
-      "images": ["http://placehold.it/50x50"]
+      "images": ["http://placehold.it/150x150", "http://placehold.it/150x150", "http://placehold.it/150x150"]
     }
   ]
 }
