@@ -1,15 +1,3 @@
-
-
-/* $("#main").append(["Ashley Davison"]);
-
-var awesomeThoughts = "I am Ashley and I am AWESOME!";
-
-console.log (awesomeThoughts);
-
-var funThoughts = awesomeThoughts.replace ("AWESOME!", "FUN!");
-
-$("#main").append(funThoughts); */
-
 var name = "Ashley Davison";
 var role = "Front-End Developer";
 
@@ -22,16 +10,29 @@ $("#header").append(formattedRole);
 var bio = {
   "name" : "Ashley",
   "role" : "Developer",
-  "picture" : "images/profilepic.jpg",
-  "welcome" : "Hello everyone and welcome to my page",
+  "picture" : ["images/profilepic2.jpg"],
+  "welcome" : "Welcome!",
   "contacts" : {
     "mobile" : "(518) 847-7915",
     "email" : "ashley.e.davison@gmail.com",
     "github" : "AshleyED",
     "location" : "Schenectady NY"
   },
-  "skills" : ["Front" , "End" , "Web" , "Developer"]
+  "skills" : ["HTML" , "CSS" , "JavaScript" , "jQuery"]
 }
+
+var formattedbioPicture = HTMLbioPic.replace("%data%" , bio.picture);
+$("#topContacts").append(formattedbioPicture);
+var formattedbioWelcome = HTMLwelcomeMsg.replace("%data%" , bio.welcome);
+$("#topContacts").append(formattedbioWelcome);
+var formattedbioMobile = HTMLmobile.replace("%data%" , bio.contacts.mobile);
+$("#topContacts").append(formattedbioMobile);
+var formattedbioEmail = HTMLemail.replace("%data%" , bio.contacts.email);
+$("#topContacts").append(formattedbioEmail);
+var formattedbioGithub = HTMLgithub.replace("%data%" , bio.contacts.github);
+$("#topContacts").append(formattedbioGithub);
+var formattedbioLocation = HTMLlocation.replace("%data%" , bio.contacts.location);
+$("#topContacts").append(formattedbioLocation);
 
 if (bio.skills.length > 0) {
   $("#header").append(HTMLskillsStart);
@@ -45,36 +46,29 @@ if (bio.skills.length > 0) {
   $("#skills").append(formattedSkill);
 }
 
-/*$("#main").prepend(bio.name);
-$("#main").append(bio.role);
-$("#main").append(bio.picture);
-$("#main").append(bio.welcome);
-$("#main").append(bio.contacts.mobile);
-$("#main").append(bio.contacts.email);
-$("#main").append(bio.contacts.github);
-$("#main").append(bio.contacts.location);
-$("#main").append(bio.skills);*/
-
 var education = {
   "schools" : [
     {
       "name": "Empire State College",
-      "city": "Online",
+      "location": "Saratoga NY",
       "degree": "BS",
-      "majors": "Business, Management & Economics",
+      "major": "Business, Management & Economics",
       "dates": "2007-2009",
       "url": "http://www.esc.edu/"
     },
     {
       "name": "University at Albany",
-      "city": "Albany NY",
+      "location": "Albany NY",
+      "degree": "None",
+      "major": "Business",
       "dates":"2005-2007",
       "url": "http://www.albany.edu/"
     },
     {
       "name": "Scotia-Glenville High School",
-      "city": "Scotia NY",
+      "location": "Scotia NY",
       "degree": "Advanced Regents Diploma",
+      "major": "None",
       "dates": "9/2001-1/2005",
       "url": "http://www.scotiaglenvilleschools.org/SrHS/SrHS_home.cfm"
     }
@@ -107,44 +101,45 @@ var education = {
   ]
 }
 
-  /*$("#main").append(school.name);
-  $("#main").append(school.location);
-  $("#main").append(school.dates);
-  $("#main").append(school.degree);
-  $("#main").append(school.major);
-  $("#main").append(school.minor);
-  $("#main").append(school.url);
+//TODO activacte links for schools
 
-  $("#main").append(school.nameA);
-  $("#main").append(school.locationA);
-  $("#main").append(school.datesA);
-  $("#main").append(school.urlA);
+function displayEducation () {
+  for (school in education.schools) {
+    $("#education").append(HTMLschoolStart);
+    var formattedName = HTMLschoolName.replace("%data%" , education.schools[school].name);
+    var formattedDegree = HTMLschoolDegree.replace("%data%" , education.schools[school].degree);
+    var formattedNameDegree = formattedName + formattedDegree;
+    $(".education-entry:last").append(formattedNameDegree);
+    var formattedDates = HTMLschoolDates.replace("%data%" , education.schools[school].dates);
+    $(".education-entry:last").append(formattedDates);
+    var formattedLocation = HTMLschoolLocation.replace("%data%" , education.schools[school].location);
+    $(".education-entry:last").append(formattedLocation);
+    var formattedMajor = HTMLschoolMajor.replace("%data%" , education.schools[school].major);
+    $(".education-entry:last").append(formattedMajor);
+  }
+}
 
-  $("#main").append(school.nameB);
-  $("#main").append(school.locationB);
-  $("#main").append(school.datesB);
-  $("#main").append(school.degreeB);
-  $("#main").append(school.urlB);*/
+displayEducation();
 
-/*$("#main").append(online.title);
-$("#main").append(online.school);
-$("#main").append(online.dates);
-$("#main").append(online.url);
-
-$("#main").append(online.titleA);
-$("#main").append(online.schoolA);
-$("#main").append(online.datesA);
-$("#main").append(online.urlA);
-
-$("#main").append(online.titleB);
-$("#main").append(online.schoolB);
-$("#main").append(online.datesB);
-$("#main").append(online.urlB);
-
-$("#main").append(online.titleC);
-$("#main").append(online.schoolC);
-$("#main").append(online.datesC);
-$("#main").append(online.urlC);*/
+function displayOnlineEducation () {
+  for (onlineCourse in education.onlineCourses) {
+// TODO figure out the below line
+//    $("#education").prepend(HTMLonlineClasses);
+//    $("#education").append(HTMLschoolStart);
+    var formattedOnlineTitle = HTMLonlineTitle.replace("%data%" , education.onlineCourses[onlineCourse].title);
+    var formattedOnlineSchool = HTMLonlineSchool.replace("%data%" , education.onlineCourses[onlineCourse].school);
+    var formattedOnlineTitleOnlineSchool = formattedOnlineTitle + formattedOnlineSchool;
+    $(".education-entry:last").append(formattedOnlineTitleOnlineSchool);
+    var formattedOnlineDates = HTMLonlineDates.replace("%data%" , education.onlineCourses[onlineCourse].dates);
+    $(".education-entry:last").append(formattedOnlineDates);
+    var formattedOnlineUrl = HTMLonlineURL.replace("%data%" , education.onlineCourses[onlineCourse].url);
+    $(".education-entry:last").append(formattedOnlineUrl);
+    //var formattedUrl = HTMLschoolMajor.replace("%data%" , education.schools[school].major);
+    //$(".education-entry:last").append(formattedMajors);
+  }
+}
+$("#education").append(HTMLonlineClasses);
+displayOnlineEducation();
 
 var work = {
   "jobs" : [
@@ -181,6 +176,8 @@ function displayWork () {
     $(".work-entry:last").append(formattedEmployerTitle);
     var formattedDates = HTMLworkDates.replace("%data%" , work.jobs[job].dates);
     $(".work-entry:last").append(formattedDates);
+    var formattedLocation = HTMLworkLocation.replace("%data%" , work.jobs[job].location);
+    $(".work-entry:last").append(formattedLocation);
     var formattedDescription = HTMLworkDescription.replace("%data%" , work.jobs[job].description);
     $(".work-entry:last").append(formattedDescription);
   }
@@ -212,19 +209,19 @@ var projects = {
       "title": "Project One",
       "dates": "2015",
       "description": "This is Project One",
-      "images": "http://placehold.it/50x50"
+      "images": ["http://placehold.it/50x50"]
     },
     {
       "title": "Project Two",
       "dates": "2015",
       "description": "This is Project Two",
-      "images": "http://placehold.it/50x50"
+      "images": ["http://placehold.it/50x50"]
     },
     {
       "title": "Project Three",
       "dates": "2015",
       "description": "This is Project Three",
-      "images": "http://placehold.it/50x50"
+      "images": ["http://placehold.it/50x50"]
     }
   ]
 }
